@@ -2,6 +2,7 @@
   "extends": ["eslint-config-semistandard"],
   "env": {
     "browser": true,
+    "mocha": true,
     "node": true
   },
   "ecmaFeatures": {
