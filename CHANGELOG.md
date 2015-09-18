@@ -1,3 +1,10 @@
+v1.0.1 - Fri, 18 Sep 2015 19:17:59 GMT
+--------------------------------------
+
+- [bf2bcfd](../../commit/bf2bcfd) [fixed] directories for publishing
+
+
+
 v1.0.0 - Fri, 18 Sep 2015 19:11:54 GMT
 --------------------------------------
 
