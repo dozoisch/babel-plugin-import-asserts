@@ -5,7 +5,7 @@
   "author": {
     "name": "Hugo Dozois-Caouette"
   },
-  "main": "lib/transform.js",
+  "main": "lib/index.js",
   "license": "MIT",
   "repository": {
     "type": "git",
