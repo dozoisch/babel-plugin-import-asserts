@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-import-asserts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "babel plugin that adds console.asserts which check that your imports are not undefined",
   "author": {
     "name": "Hugo Dozois-Caouette"
@@ -9,7 +9,7 @@
   "directories": {
     "lib": "lib/"
   },
-    "files": [
+  "files": [
     "LICENSE",
     "README.md",
     "CHANGELOG.md",
