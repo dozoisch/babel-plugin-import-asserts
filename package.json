@@ -9,6 +9,12 @@
   "directories": {
     "lib": "lib/"
   },
+    "files": [
+    "LICENSE",
+    "README.md",
+    "CHANGELOG.md",
+    "lib"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
