@@ -3,17 +3,19 @@
   "version": "0.1.0",
   "description": "babel plugin that adds console.asserts which check that your imports are not undefined",
   "author": {
-    "name": "Jonathan Werner"
+    "name": "Hugo Dozois-Caouette"
   },
+  "main": "lib/transform.js",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jonathanewerner/babel-plugin-import-asserts.git"
+    "url": "git+https://github.com/dozoisch/babel-plugin-import-asserts.git"
+  },
+  "scripts": {
   },
   "peerDependencies": {
     "babel-core": ">=5.2.0"
   },
-  "main": "index.js",
   "devDependencies": {
     "babel": "^5.6.0"
   },
