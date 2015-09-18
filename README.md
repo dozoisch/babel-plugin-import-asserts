@@ -9,9 +9,9 @@ Babel plugin that does the following:
 
 For every `import baz, {foo, bar} from './baz';` it adds 
 ```
-console.assert(foo, 'foo from ./abz is undefined'); 
-console.assert(bar, 'bar from ./abz is undefined');
-console.assert(baz, 'baz from ./abz is undefined');
+console.assert(typeof foo !== 'undefined', '[IMPORT]: foo from ./abz is undefined'); 
+console.assert(typeof bar !== 'undefined', '[IMPORT]: bar from ./abz is undefined');
+console.assert(typeof baz !== 'undefined', '[IMPORT]: baz from ./abz is undefined');
 ```
 below the import statement.
 
