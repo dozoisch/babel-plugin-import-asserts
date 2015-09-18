@@ -6,6 +6,9 @@
     "name": "Hugo Dozois-Caouette"
   },
   "main": "lib/index.js",
+  "directories": {
+    "lib": "lib/"
+  },
   "license": "MIT",
   "repository": {
     "type": "git",
