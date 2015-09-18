@@ -3,8 +3,8 @@ Babel plugin that does the following:
 
 For every `import {foo, bar} from './baz';` it adds 
 ```
-console.assert(foo, 'foo is undefined'); 
-console.assert(baz, 'baz is undefined');
+console.assert(foo, 'foo from ./abz is undefined'); 
+console.assert(bar, 'foo from ./abz is undefined');
 ```
 below the import statement. The same goes for `import foo from './baz';`.
 
@@ -14,24 +14,27 @@ Motivation:
 
 2. catch the case when you use a default import although it would have to be a regular import. (`import foo from './bar'` instead of `import {foo} from './bar'`). this happens way to often and there currently is no default safety net preventing you from doing this. 
 
-**Note**: Only use this for development builds, you don't wanna bloat the production bundle. 
-
-**Note 2**: This only works for codebases where you can guarantee that every imported thing will be instantly bound. It is theoretically possible for imported things  to *initially* be `undefined` and *later* defined. This is because ES6 Imports are "live binding". See [here](https://github.com/ModuleLoader/es6-module-loader/wiki/Circular-References-&-Bindings) for more information. 
-
 # Usage
-```
-$ babel --plugins import-asserts script.js
-```
 
-or in a `.babelrc`:
+Make sure to use it only in development.
+
+In `.babelrc`:
 ```
 {
   "stage": 0,
-  "plugins": [
-    "import-asserts"
-  ]
+    "env": {
+      "development": {
+        "plugins": [
+          "import-asserts"
+        ]
+    }
 }
 ```
 
 or in webpack:
 `loader: 'babel?{"plugins":["import-asserts"]}'}`
+
+
+---
+
+Inspired by: https://github.com/jonathanewerner/babel-plugin-import-asserts

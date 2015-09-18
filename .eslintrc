@@ -1,0 +1,16 @@
+{
+  "extends": ["eslint-config-semistandard"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "ecmaFeatures": {
+  },
+  "parser": "babel-eslint",
+  "plugins": [
+  ],
+  "rules": {
+    "comma-dangle": [2, "always-multiline"], // disallow or enforce trailing commas
+    "no-var": 2,
+  }
+}
