@@ -12,24 +12,24 @@ export default function (babel) {
   function consoleTest (thing, fromValue) {
     return console_('assert',
       [
-        t.binaryExpression('!==', t.unaryExpression('typeof', t.identifier(thing)), t.literal('undefined')),
-        t.literal('[IMPORT]:'),
-        t.literal(thing),
-        t.literal('from'),
-        t.literal(fromValue),
-        t.literal('is undefined.'),
+        t.binaryExpression('!==', t.unaryExpression('typeof', t.identifier(thing)), t.stringLiteral('undefined')),
+        t.stringLiteral('[IMPORT]:'),
+        t.stringLiteral(thing),
+        t.stringLiteral('from'),
+        t.stringLiteral(fromValue),
+        t.stringLiteral('is undefined.'),
       ]
     );
   }
 
-  return new babel.Plugin('import-asserts', {
+  return {
     visitor: {
-      ImportDeclaration (node, parent) {
-        node.specifiers.map((specifier, idx) => {
-          this.insertAfter(consoleTest(specifier.local.name, node.source.value));
+      ImportDeclaration (path, state) {
+        path.node.specifiers.map((specifier, idx) => {
+          path.insertAfter(consoleTest(specifier.local.name, path.node.source.value));
         });
       },
     },
-  });
+  };
 }
 
