@@ -22,6 +22,9 @@ Motivation:
 
 # Usage
 
+- With Babel 5.0 use version 1.X
+- With Babel 6.0 use version 2.X
+
 Make sure to use it only in development.
 
 In `.babelrc`:
