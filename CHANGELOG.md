@@ -1,3 +1,11 @@
+v2.0.0 - Fri, 13 Nov 2015 02:24:56 GMT
+--------------------------------------
+
+- [69fefd4](../../commit/69fefd4) [changed] upgrade to babel 6
+- [ebe96ca](../../commit/ebe96ca) [added] updated README to actual output
+
+
+
 v1.0.2 - Fri, 18 Sep 2015 19:21:15 GMT
 --------------------------------------
 
