@@ -1,6 +1,18 @@
 export default function (babel) {
   const t = babel.types;
 
+  function timeout (assert) {
+    return t.expressionStatement(
+      t.callExpression(
+        t.identifier('setTimeout'),
+        [
+          t.functionExpression(null, [], t.blockStatement([assert])),
+          t.numericLiteral(0),
+        ]
+      )
+    );
+  }
+
   function console_ (method, args) {
     return t.expressionStatement(t.callExpression(
       t.memberExpression(
@@ -10,7 +22,7 @@ export default function (babel) {
   }
 
   function consoleTest (thing, fromValue) {
-    return console_('assert',
+    const assert = console_('assert',
       [
         t.binaryExpression('!==', t.unaryExpression('typeof', t.identifier(thing)), t.stringLiteral('undefined')),
         t.stringLiteral('[IMPORT]:'),
@@ -20,6 +32,8 @@ export default function (babel) {
         t.stringLiteral('is undefined.'),
       ]
     );
+
+    return timeout(assert);
   }
 
   return {
