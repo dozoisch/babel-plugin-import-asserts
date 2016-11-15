@@ -6,21 +6,15 @@ Object.defineProperty(exports, "__esModule", {
 
 var _cueball = require('cueball');
 
-var _loop = function _loop(_key2) {
-  if (_key2 === "default") return 'continue';
-  Object.defineProperty(exports, _key2, {
+Object.keys(_cueball).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  Object.defineProperty(exports, key, {
     enumerable: true,
     get: function get() {
-      return _cueball[_key2];
+      return _cueball[key];
     }
   });
-};
-
-for (var _key2 in _cueball) {
-  var _ret = _loop(_key2);
-
-  if (_ret === 'continue') continue;
-}
+});
 
 var _bar = require('bar');
 
