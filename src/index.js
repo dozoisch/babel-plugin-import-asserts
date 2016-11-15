@@ -39,9 +39,11 @@ export default function (babel) {
   return {
     visitor: {
       ImportDeclaration (path, state) {
-        path.node.specifiers.map((specifier, idx) => {
-          path.insertAfter(consoleTest(specifier.local.name, path.node.source.value));
-        });
+        if (path.node.importKind !== 'type') {
+          path.node.specifiers.map((specifier, idx) => {
+            path.insertAfter(consoleTest(specifier.local.name, path.node.source.value));
+          });
+        }
       },
     },
   };
