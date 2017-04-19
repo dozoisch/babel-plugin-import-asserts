@@ -25,11 +25,12 @@ export default function (babel) {
     const assert = console_('assert',
       [
         t.binaryExpression('!==', t.unaryExpression('typeof', t.identifier(thing)), t.stringLiteral('undefined')),
-        t.stringLiteral('[IMPORT]:'),
+        t.stringLiteral('WARNING'),
+        t.stringLiteral('You have tried to import'),
         t.stringLiteral(thing),
         t.stringLiteral('from'),
         t.stringLiteral(fromValue),
-        t.stringLiteral('is undefined.'),
+        t.stringLiteral('but it is undefined.'),
       ]
     );
 
